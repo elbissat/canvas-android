@@ -17,12 +17,11 @@
 package com.instructure.teacher.utils
 
 import android.util.Log
-import com.crashlytics.android.Crashlytics
 import com.instructure.canvasapi2.utils.Logger
 
 object LoggingUtility {
     fun log(s: String?, priority: Int = Log.DEBUG, tag: String = Logger.LOG_TAG) {
         //Will write to crashlytics and logcat
-        if (Logger.canLogUserDetails()) Crashlytics.log(priority, tag, s)
+       // if (Logger.canLogUserDetails()) Crashlytics.log(priority, tag, s)
     }
 }

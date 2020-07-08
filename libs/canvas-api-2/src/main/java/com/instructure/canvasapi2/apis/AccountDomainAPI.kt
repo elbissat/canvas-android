@@ -30,7 +30,7 @@ import retrofit2.http.Url
 
 
 object AccountDomainAPI {
-    private const val DEFAULT_DOMAIN = "http://192.168.100.171:8080"
+    private const val DEFAULT_DOMAIN = "https://api.aylearn.net"
 
     interface AccountDomainInterface {
         @GET

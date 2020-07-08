@@ -19,8 +19,6 @@ package com.instructure.teacher.utils
 import android.content.IntentFilter
 import android.os.Build
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.crashlytics.android.Crashlytics
-import com.crashlytics.android.core.CrashlyticsCore
 import com.google.android.play.core.missingsplits.MissingSplitsManagerFactory
 import com.instructure.canvasapi2.utils.AnalyticsEventConstants
 import com.instructure.canvasapi2.utils.ApiPrefs
@@ -36,13 +34,12 @@ import com.instructure.teacher.tasks.TeacherLogoutTask
 import com.pspdfkit.PSPDFKit
 import com.pspdfkit.exceptions.InvalidPSPDFKitLicenseException
 import com.pspdfkit.exceptions.PSPDFKitInitializationFailedException
-import io.fabric.sdk.android.Fabric
 
 class AppManager : com.instructure.canvasapi2.AppManager() {
 
     override fun onCreate() {
         // Set preferences to create a pre-logged-in state. This should only be used for the 'robo' app flavor.
-        if (BuildConfig.IS_ROBO_TESTING) RoboTesting.setAppStatePrefs()
+        //if (BuildConfig.IS_ROBO_TESTING) RoboTesting.setAppStatePrefs()
         if (MissingSplitsManagerFactory.create(this).disableAppIfMissingRequiredSplits()) {
             // Skip app initialization.
             return
@@ -59,11 +56,11 @@ class AppManager : com.instructure.canvasapi2.AppManager() {
         RemoteConfigUtils.initialize()
 
         if (!ApiPrefs.domain.endsWith(com.instructure.loginapi.login.BuildConfig.ANONYMOUS_SCHOOL_DOMAIN)) {
-            val crashlytics = Crashlytics.Builder()
+           /* val crashlytics = Crashlytics.Builder()
                     .core(CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
                     .build()
             Fabric.with(this, crashlytics)
-            Analytics.trackAppFlow(this)
+            Analytics.trackAppFlow(this)*/
         }
 
         ColorKeeper.defaultColor = getColorCompat(R.color.defaultPrimary)
