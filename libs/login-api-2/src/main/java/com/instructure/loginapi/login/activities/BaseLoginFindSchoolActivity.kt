@@ -227,7 +227,7 @@ abstract class BaseLoginFindSchoolActivity : AppCompatActivity(), ErrorReportDia
 
         val view = LayoutInflater.from(this).inflate(R.layout.login_toolbar_icon, null, false)
         val icon = view.findViewById<ImageView>(R.id.loginLogo)
-        icon.setImageDrawable(ColorUtils.colorIt(color, icon.drawable))
+        //icon.setImageDrawable(ColorUtils.colorIt(color, icon.drawable))
 
         toolbar!!.addView(view)
 

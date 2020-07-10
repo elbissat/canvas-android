@@ -53,7 +53,7 @@ class FindSchoolActivity : BaseLoginFindSchoolActivity() {
         val color = themeColor()
         val view = LayoutInflater.from(this).inflate(R.layout.login_toolbar_icon, null, false)
         val icon = view.findViewById<ImageView>(com.instructure.loginapi.login.R.id.loginLogo)
-        icon.setImageDrawable(ColorUtils.colorIt(color, icon.drawable))
+        //icon.setImageDrawable(ColorUtils.colorIt(color, icon.drawable))
 
         if (findStudent()) {
             val title = view.findViewById<TextView>(R.id.loginLogoText)

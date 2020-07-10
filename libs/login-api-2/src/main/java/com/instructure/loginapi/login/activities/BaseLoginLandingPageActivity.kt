@@ -20,6 +20,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.content.pm.ApplicationInfo
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.GestureDetector
@@ -244,7 +245,7 @@ abstract class BaseLoginLandingPageActivity : AppCompatActivity(), ErrorReportDi
         findMySchool.background = DrawableCompat.unwrap(wrapDrawable)
 
         // Icon
-       // ColorUtils.colorIt(color, canvasLogo)
+        //ColorUtils.colorIt(Color.WHITE, canvasLogo)
 
         // App Name/Type. Will not be present in all layout versions
         appDescriptionType?.setTextColor(color)
